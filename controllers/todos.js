@@ -14,6 +14,7 @@ function show(req, res) {
 
 function index(req, res) {
   res.render('todos/index', {
-    todos: Todo.getAll()
+    todos: Todo.getAll(),
+    time: req.time
   });
 }
