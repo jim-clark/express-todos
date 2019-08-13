@@ -6,8 +6,14 @@ module.exports = {
   new: newTodo,
   create,
   delete: deleteTodo,
-  edit
+  edit,
+  update
 };
+
+function update(req, res) {
+  Todo.update(req.params.id, req.body);
+  res.redirect(`/todos/${req.params.id}`);
+}
 
 function edit(req, res) {
   var todo = Todo.getOne(req.params.id);
