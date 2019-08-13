@@ -5,8 +5,13 @@ const todos = [
 ];
 
 module.exports = {
-  getAll
+  getAll,
+  getOne
 };
+
+function getOne(id) {
+  return todos[id];
+}
 
 function getAll() {
   return todos;
