@@ -11,5 +11,6 @@
   <h1>Todo #<%= todoNum %></h1>
   <h3><%= todo.todo %></h3>
   <h3>Complete: <%= todo.done ? 'Yes' : 'Nope' %></h3>
+  <a href="/todos/<%= todoNum - 1 %>/edit">Edit</a>
 </body>
 </html>
