@@ -5,8 +5,17 @@ module.exports = {
   show,
   new: newTodo,
   create,
-  delete: deleteTodo
+  delete: deleteTodo,
+  edit
 };
+
+function edit(req, res) {
+  var todo = Todo.getOne(req.params.id);
+  res.render('todos/edit', {
+    todo,
+    todoIdx: req.params.id
+  });
+}
 
 function deleteTodo(req, res) {
   Todo.deleteOne(req.params.id);
