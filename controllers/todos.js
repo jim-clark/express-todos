@@ -3,8 +3,16 @@ var Todo = require('../models/todo');
 module.exports = {
   index,
   show,
-  new: newTodo
+  new: newTodo,
+  create
 };
+
+function create(req, res) {
+  console.log(req.body);
+  req.body.done = false;
+  Todo.create(req.body);
+  res.redirect('/todos');
+}
 
 function newTodo(req, res) {
   res.render('todos/new');
